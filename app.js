@@ -182,6 +182,7 @@ io.sockets.on('connection', function (socket) {
   // Switch Difficulty. Called when spymaster switches to hard / normal
   // Data: New difficulty
   socket.on('switchDifficulty', (data) => {
+    console.log(data)
     if (!PLAYER_LIST[socket.id]) return // Prevent Crash
     let room = PLAYER_LIST[socket.id].room        // Get room the client was in
     ROOM_LIST[room].difficulty = data.difficulty  // Update the rooms difficulty
